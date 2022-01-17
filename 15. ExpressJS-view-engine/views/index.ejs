@@ -1,0 +1,8 @@
+<% if (Mahasiswa.length < 1) { %>
+<p>Data Mahasiswa Masih Kosong</p>
+<% } else {%> <% Mahasiswa.forEach(m => { %>
+<ul>
+    <li><%= m.nama %></li>
+    <li><%= m.email %></li>
+</ul>
+<% }) %> <% } %>

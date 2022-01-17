@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- mycss -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="aos/dist/aos.css" />
+        <title><%= title %></title>
+    </head>
+    <body>
+        <div class="preloader">
+            <div class="wrapper">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-1a"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+            </div>
+            <h1>Loading…</h1>
+        </div>
+        <!-- End: Preloader -->
+        <%- include('nav') %>
+
+        <div class="container-fluid text-white"><%- body %></div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+        <script src="js/script.js"></script>
+        <script src="aos/dist/aos.js"></script>
+        <script src="/vivus/dist/vivus.min.js"></script>
+        <script>
+            AOS.init({});
+            const textFill = document.querySelector(".logo-svg-fill");
+
+            const showTextFill = () => {
+                textFill.classList.add("is-active");
+            };
+            new Vivus(
+                "logo-svg",
+                {
+                    dashGap: 1,
+                    duration: 70,
+                    animTimingFunction: Vivus.EASE,
+                },
+                showTextFill
+            );
+        </script>
+    </body>
+</html>
